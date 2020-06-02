@@ -1,0 +1,59 @@
+dist: bionic
+sudo: true
+language: cpp
+os:
+  - linux
+compiler:
+  - gcc
+addons:
+  apt:
+    packages: &common-apt-packages
+      - build-essential
+      - cmake
+      - extra-cmake-modules
+      - m4
+      - libxcb1-dev
+      - libxcb-keysyms1-dev
+      - libxcb-util0-dev
+      - libdbus-1-dev
+      - libevent-dev
+      - uuid-dev
+      - gettext
+      - libsystemd-dev
+      - libxkbfile-dev
+      - libxkbcommon-x11-dev
+      - libxcb-xkb-dev
+      - libxcb1-dev
+      - libpango1.0-dev
+      - libpangocairo-1.0-0
+      - libenchant-dev
+      - libxcb-ewmh-dev
+      - libxcb-xinerama0-dev
+      - libxcb-icccm4-dev
+      - libxcb-ewmh-dev
+      - libjson-c-dev
+      - wayland-protocols
+      - libboost-dev
+      - libboost-iostreams-dev
+      - libcurl4-gnutls-dev
+      - libopencc-dev
+      - qtbase5-dev
+      - qtbase5-private-dev
+      - qtwebengine5-dev
+      - libqt5webchannel5-dev
+      - qt4-qmake
+      - libqt4-dev
+      - gobject-introspection
+      - libgirepository1.0-dev
+      - libgtk2.0-dev
+      - libgtk-3-dev
+      # - libfmt-dev
+script: ci/script.sh
+
+# deploy:
+#   provider: releases
+#   api_key:
+#   file:
+#   skip_cleanup: true
+#   on:
+#     tags: true
